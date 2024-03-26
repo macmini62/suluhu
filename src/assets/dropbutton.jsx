@@ -2,10 +2,10 @@ import { useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
 
-const dropButton = () => {
+const dropButton = ({ getOption }) => {
     const[toggle, setToggle] = useState(false);
     const[option, setOption] = useState("Select a region");
-    
+
     const showOptions = () => {
         setToggle(toggle => !toggle);
     };
@@ -17,7 +17,7 @@ const dropButton = () => {
     };
 
     return(
-        <div className="relative m-6">
+        <div className="w-auto relative m-6">
             <button onClick={showOptions} className="flex items-center justify-around w-full h-8 p-1 border-2 rounded-lg">
                 <p className="text-sm m-2">
                     {option}

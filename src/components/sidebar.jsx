@@ -9,7 +9,7 @@ const Sidebar = () => {
                     <img src="" alt="" className="w-full h-full"/>
                 </a>
             </div>
-            <div className="flex flex-col items-center justify-around w-full h-5/6">
+            <div className="relative flex flex-col items-center w-full h-5/6">
                 <ul className="w-5/6">
                     <Link to="/">
                         <li className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg">
@@ -36,7 +36,7 @@ const Sidebar = () => {
                         </li>
                     </Link>
                 </ul>
-                <button className="w-5/6 h-16 font-semibold text-lg rounded-lg border-2">
+                <button className="absolute bottom-10 w-5/6 h-16 font-semibold text-lg rounded-lg border-2">
                     LOG OUT
                 </button>
             </div>
