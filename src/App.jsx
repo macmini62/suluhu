@@ -8,7 +8,7 @@ import Sidebar from "./components/sidebar";
 
 const App = () => {
   return(
-    <div className="relative flex w-screen p-4 pb-2 bg-slate-400">
+    <div className="relative flex w-screen p-4 pb-2 bg-white">
       <Sidebar/>
       <Routes>
           <Route path="/login" element={<Login/>}/>

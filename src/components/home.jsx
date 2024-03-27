@@ -4,14 +4,15 @@ import { IoMdSearch } from "react-icons/io";
 
 const Home = () => {
     const [display, setDisplay] = useState(false);
+    const [region, setRegion] = useState("REGION");
 
     const showData = () => {
         setDisplay(display => !display);
     };
     
     return(
-        <div className="w-5/6 flex flex-col border-2 rounded-lg overflow-hidden">
-            <header className="w-full h-1/6 border-2 rounded-md">
+        <div className="w-5/6 flex flex-col rounded-lg overflow-hidden bg-gray-200">
+            <header className="w-full h-1/6 rounded-md">
                 <div className="h-1/2">
                     <p className="text-5xl text-center p-4">
                         SULUHU
@@ -21,11 +22,11 @@ const Home = () => {
                     <div className="w-48">
                         <DropButton/>
                     </div>
-                    <div className="w-72 h-10 p-1 flex items-center border-2 rounded-lg overflow-hidden">
+                    <div className="w-72 h-10 p-1 flex items-center rounded-lg overflow-hidden">
                         <button className="text-sm m-1 hover:underline">Search</button>
-                        <hr className="h-full m-0.5 border"/>
+                        <hr className="h-full m-0.5 border border-red-500"/>
                         <IoMdSearch className="w-6 h-6 m-1"/>
-                        <input type="text" className="w-2/3 h-full pl-2 pr-2 outline-none"/>
+                        <input type="text" placeholder="Type here..." className="w-2/3 h-full pl-2 pr-2 outline-none border border-red-300"/>
                     </div>
                     <div className="w-48 flex justify-around">
                         <a href="" className="hover:underline">
@@ -37,10 +38,11 @@ const Home = () => {
                     </div>
                 </div>
             </header>
-            <p className="text-center text-2xl mt-4">REGION</p>
+            <hr className="w-full border border-red-500"/>
+            <p className="text-center text-2xl mt-4">{region} COUNTY</p>
             <div className="w-full h-5/6 overflow-auto">
                 <div className="grid grid-flow-row gap-8 grid-cols-4 pt-0 p-6">
-                    <div className="flex flex-col items-center h-54 p-4 border-2 rounded-md">
+                    <div className="flex flex-col items-center h-54 p-4 border-2 border-red-400 rounded-md">
                         <p className="text-3xl text-center m-2">Malaria</p>
                         <hr className="w-5/6 border border-gray-600"/>
                         <div className="w-full h-2/3">
@@ -54,6 +56,7 @@ const Home = () => {
                         <p onClick={showData} className="self-end text-sm hover:underline hover:cursor-pointer">Show {!display ? "more" : "less"}</p>
                         {display && 
                             <div className="w-full border-2 rounded-md m-2 text-lg">
+                            <hr className="w-full border border-gray-300"/>
                             <p className="text-center underline">Records</p>
                                 <div className="flex gap-2 w-full m-2">
                                     <p>Males:</p>
@@ -84,10 +87,11 @@ const Home = () => {
                                         <p>{">"} 15-18: <span>0</span></p>
                                     </div>
                                 </div>
+                            <hr className="w-full border border-gray-300"/>
                             </div>
                         }
                     </div>
-                    <div className="flex flex-col items-center h-54 p-4 border-2 rounded-md">
+                    <div className="flex flex-col items-center h-54 p-4 border-2 border-red-400 rounded-md">
                         <p className="text-3xl text-center m-2">Cholera</p>
                         <hr className="w-5/6 border border-gray-600"/>
                         <div className="w-full h-2/3">
@@ -101,6 +105,7 @@ const Home = () => {
                         <p onClick={showData} className="self-end text-sm hover:underline hover:cursor-pointer">Show {!display ? "more" : "less"}</p>
                         {display && 
                             <div className="w-full border-2 rounded-md m-2 text-lg">
+                            <hr className="w-full border border-gray-300"/>
                             <p className="text-center underline">Records</p>
                                 <div className="flex gap-2 w-full m-2">
                                     <p>Males:</p>
@@ -131,6 +136,7 @@ const Home = () => {
                                         <p>{">"} 15-18: <span>0</span></p>
                                     </div>
                                 </div>
+                            <hr className="w-full border border-gray-300"/>
                             </div>
                         }
                     </div>
