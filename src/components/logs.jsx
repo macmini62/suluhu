@@ -2,6 +2,8 @@ import { useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
 import { SlArrowUp } from "react-icons/sl";
 import { IoMdSearch } from "react-icons/io";
+import { CiEdit } from "react-icons/ci";
+
 
 const Logs = () => {
 
@@ -28,7 +30,7 @@ const Logs = () => {
                     <input type="text" placeholder="Type here.." className="w-2/3 h-full pl-2 pr-2 outline-none border border-black"/>
                 </div>
             </div>
-            <hr className="w-full border border-black"/>
+            {/* <hr className="w-full border border-black"/>
             <p className="text-center text-2xl mt-2 underline">Modifications</p>
             <div className="w-full flex flex-col items-center justify-center">
                     <div className="relative left-96 m-2">
@@ -70,7 +72,8 @@ const Logs = () => {
                         <td className="text-center p-2 ">28.02.2024</td>
                     </tbody>
                 </table>
-            </div>
+            </div> */}
+
             <hr className="w-full border border-black"/>
             <p className="text-center text-2xl mt-2 underline">Errors</p>
             <div className="w-full flex flex-col items-center justify-center">
@@ -98,19 +101,20 @@ const Logs = () => {
                 <table className="m-2 overflow-hidden border-separate border-spacing-1 border border-black p-0.5 rounded-sm">
                     <thead>
                         <tr>
-                            <th className="text-center p-1 border border-black">Document</th>
-                            <th className="text-center p-1 border border-black">Region</th>
-                            <th className="text-center p-1 border border-black">Administrative</th>
-                            <th className="text-center p-1 border border-black">Error</th>
+                            <th className="text-center p-1 border border-black">Level</th>
+                            <th className="text-center p-1 border border-black">Message</th>
+                            <th className="text-center p-1 border border-black">Type</th>
                             <th className="text-center p-1 border border-black">Date</th>
+                            <th className="text-center p-1 border border-black">Time</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <td className="text-center p-2 ">CHPs</td>
-                        <td className="text-center p-2 ">Kiambu</td>
-                        <td className="text-center p-2 ">David Malen</td>
+                        <td className="text-center p-2 ">Sub-County</td>
                         <td className="text-center p-2 ">Undocumented registered CHPs</td>
-                        <td className="text-center p-2 ">28.02.2024</td>
+                        <td className="text-center p-2 ">Logs not found</td>
+                        <td className="text-center p-2 ">2024-03-29</td>
+                        <td className="text-center p-2 ">08:20:59</td>
+                        <td className="text-center p-2 "><CiEdit className="w-6 h-6 hover:cursor-pointer"/></td>
                     </tbody>
                 </table>
             <hr className="w-full border border-black"/>

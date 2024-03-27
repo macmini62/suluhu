@@ -39,7 +39,7 @@ const Home = () => {
                 </div>
             </header>
             <hr className="w-full border border-red-500"/>
-            <p className="text-center text-2xl mt-4">{region} COUNTY</p>
+            <p className="text-center text-2xl m-4 ">{region} COUNTY</p>
             <div className="w-full h-5/6 overflow-auto">
                 <div className="grid grid-flow-row gap-8 grid-cols-4 pt-0 p-6">
                     <div className="flex flex-col items-center h-54 p-4 border-2 border-red-400 rounded-md">

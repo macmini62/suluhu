@@ -8,6 +8,7 @@ const [style, setStyle] = useState("");
 const handleStyle = (event) => {
     const selected = event.target.innerHTML;
     setStyle(selected);
+    console.log(selected);
 };
 
     return(
@@ -20,8 +21,8 @@ const handleStyle = (event) => {
             <div className="relative flex flex-col items-center w-full h-5/6">
                 <ul className="w-5/6">
                     <Link to="/">
-                        <li className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg border-white hover:bg-white hover:text-green-700">
-                            <button onClick={handleStyle} className="w-5/6 h-full">
+                        <li onClick={handleStyle} id="Home" className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg border-white hover:bg-white hover:text-green-700">
+                            <button className="w-5/6 h-full">
                                 Home
                             </button>
                             {style !== "Home" ?
@@ -32,8 +33,8 @@ const handleStyle = (event) => {
                         </li>
                     </Link>
                     <Link to="/users">
-                        <li className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg border-white hover:bg-white hover:text-green-700">
-                            <button onClick={handleStyle} className="w-5/6 h-full">
+                        <li onClick={handleStyle} id="Users" className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg border-white hover:bg-white hover:text-green-700">
+                            <button className="w-5/6 h-full">
                                 Users
                             </button>
                             {style !== "Users" ?
@@ -44,8 +45,8 @@ const handleStyle = (event) => {
                         </li>
                     </Link>
                     <Link to="/logs">
-                        <li className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg border-white hover:bg-white hover:text-green-700">
-                            <button onClick={handleStyle} className="w-5/6 h-full">
+                        <li onClick={handleStyle} id="Logs" className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg border-white hover:bg-white hover:text-green-700">
+                            <button className="w-5/6 h-full">
                                 Logs
                             </button>
                             {style !== "Logs" ?
