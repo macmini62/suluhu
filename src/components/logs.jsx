@@ -32,7 +32,7 @@ const Logs = () => {
                 </div>
             </div>
             <hr className="w-full border border-black"/>
-            <p className="text-center text-2xl mt-2 underline">Data</p>
+            <p className="text-center text-2xl mt-2 underline">DATA</p>
             <div className="w-full flex flex-col items-center justify-center">
                     <div className="relative left-96 m-2">
                         <button onClick={showOptions} className="flex items-center justify-around w-full h-8 p-1 border-2 rounded-lg">
@@ -110,6 +110,9 @@ const Logs = () => {
                         </td>
                     </tbody>
                 </table>
+            <button className="w-32 h-10 bg-green-600 m-2 rounded-lg hover:bg-white hover:border hover:border-green-500">
+                Verify Changes.
+            </button>
             <hr className="w-full border border-black mt-2 mb-2"/>
             <p className="text-center text-2xl mt-2 underline">ERRORS</p>
             <div className="w-full flex flex-col items-center justify-center">
@@ -179,6 +182,9 @@ const Logs = () => {
                     </tbody>
                 </table>
             </div>
+            <button className="w-32 h-10 bg-green-600 m-2 rounded-lg hover:bg-white hover:border hover:border-green-500">
+                Verify Changes.
+            </button>
             <hr className="w-full border border-black"/>
             </div>
         </div>
