@@ -1,7 +1,7 @@
 import React, { useState }  from "react";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({ handleLogout }) => {
 
 const [style, setStyle] = useState("");
 
@@ -20,7 +20,7 @@ const handleStyle = (event) => {
             </div>
             <div className="relative flex flex-col items-center w-full h-5/6">
                 <ul className="w-5/6">
-                    <Link to="/">
+                    <Link to="/home">
                         <li onClick={handleStyle} id="Home" className="flex justify-evenly w-full h-16 mt-2 mb-2 rounded-lg border-2 text-lg border-white hover:bg-white hover:text-green-700">
                             <button className="w-5/6 h-full">
                                 Home
@@ -57,9 +57,11 @@ const handleStyle = (event) => {
                         </li>
                     </Link>
                 </ul>
-                <button className="absolute bottom-10 w-5/6 h-16 font-semibold text-lg rounded-lg border-2 active:bg-white active:text-green-800">
-                    LOG OUT
-                </button>
+                <Link to="/" className="absolute bottom-10 w-5/6 h-16">
+                    <button onClick={handleLogout} className="w-full h-full font-semibold text-lg rounded-lg border-2 active:bg-white active:text-green-800">
+                        LOG OUT
+                    </button>
+                </Link>
             </div>
         </div>
     );
