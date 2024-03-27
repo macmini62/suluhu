@@ -1,10 +1,23 @@
 import { useState } from "react";
 import DropButton from "../assets/dropbutton.jsx";
 import { IoMdSearch } from "react-icons/io";
+import { SlArrowDown } from "react-icons/sl";
+import { SlArrowUp } from "react-icons/sl";
 
 const Home = () => {
     const [display, setDisplay] = useState(false);
-    const [region, setRegion] = useState("REGION");
+    const[toggle, setToggle] = useState(false);
+    const[option, setOption] = useState("Select a region");
+
+    const showOptions = () => {
+        setToggle(toggle => !toggle);
+    };
+
+    const toggledOption = (event) => {
+        const value = event.target.innerHTML;
+        setOption(value);
+        setToggle(toggle => !toggle);
+    };
 
     const showData = () => {
         setDisplay(display => !display);
@@ -20,7 +33,35 @@ const Home = () => {
                 </div>
                 <div className="flex items-center justify-around">
                     <div className="w-48">
-                        <DropButton/>
+                        <div className="w-auto relative m-6">
+                            <button onClick={showOptions} className="flex items-center justify-around w-full h-8 p-1 border-2 rounded-lg">
+                                <p className="text-sm m-2">
+                                    {option}
+                                </p>
+                                {
+                                    toggle ? <SlArrowUp className="w-3 h-3 m-1"/> : <SlArrowDown className="w-3 h-3 m-1"/>
+                                }
+                            </button>
+                            {
+                                toggle && <div className="absolute left-10 w-24 m-1 border-2">
+                                    <p onClick={toggledOption} className="text-center hover:cursor-pointer bg-slate-300 hover:bg-slate-200">
+                                        MOMBASA
+                                    </p>
+                                    <p onClick={toggledOption} className="text-center hover:cursor-pointer bg-slate-300 hover:bg-slate-200">
+                                        NAIROBI
+                                    </p>
+                                    <p onClick={toggledOption} className="text-center hover:cursor-pointer bg-slate-300 hover:bg-slate-200">
+                                        KISUMU
+                                    </p>
+                                    <p onClick={toggledOption} className="text-center hover:cursor-pointer bg-slate-300 hover:bg-slate-200">
+                                        NAKURU
+                                    </p>
+                                    <p onClick={toggledOption} className="text-center hover:cursor-pointer bg-slate-300 hover:bg-slate-200">
+                                        MARSABIT
+                                    </p>
+                                </div>
+                            }
+                        </div>
                     </div>
                     <div className="w-72 h-10 p-1 flex items-center rounded-lg overflow-hidden">
                         <button className="text-sm m-1 hover:underline">Search</button>
@@ -39,7 +80,7 @@ const Home = () => {
                 </div>
             </header>
             <hr className="w-full border border-red-500"/>
-            <p className="text-center text-2xl m-4 ">{region} COUNTY</p>
+            <p className="text-center text-2xl m-4 ">{option} COUNTY</p>
             <div className="w-full h-5/6 overflow-auto">
                 <div className="grid grid-flow-row gap-8 grid-cols-4 pt-0 p-6">
                     <div className="flex flex-col items-center h-54 p-4 border-2 border-red-400 rounded-md">
