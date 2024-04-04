@@ -29,6 +29,7 @@ const App = () => {
 			<div className="relative h-screen flex w-full">
 				<Routes>
 					<Route path="/" element={<Login handleLogin={validateLogin}/>}/>
+					
 				</Routes>
 			</div>
 		}
