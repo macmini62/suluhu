@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 
 
@@ -5,7 +6,7 @@ import  { useState } from 'react';
 import baseUrl from '../constants';
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
     const [username, setUsername] = useState("");
     const [code, setCode] = useState("");
     const [password, setPassword] = useState("");
@@ -49,6 +50,7 @@ const Login = () => {
                     console.log("Somethign went wrong")
                 }
                 navigate("/home")
+                handleLogin();
             } else {
                 // Handle login failure
                 console.error('Login failed');
